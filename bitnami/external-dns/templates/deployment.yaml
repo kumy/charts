@@ -214,6 +214,9 @@ spec:
               {{- else }}
             - --rfc2136-insecure
               {{- end }}
+              {{- if .Values.rfc2136.enableCompression }}
+            - --rfc2136-enable-compression
+              {{- end }}
             {{- end }}
             {{- if eq .Values.provider "pdns" }}
             # PowerDNS arguments
